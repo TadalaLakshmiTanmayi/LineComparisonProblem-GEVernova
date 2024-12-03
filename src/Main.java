@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Computation Program on Master Branch");
@@ -18,11 +16,13 @@ public class Main {
         int y4 = sc.nextInt();
         CalculateLineLength findinglength=new CalculateLineLength();
         LineEquality lineEquality = new LineEquality();
+        LineComparison lineComparison = new LineComparison();
         int i =1;
         do{
             System.out.println("\nChoose an option:");
             System.out.println("1. Calculate the length of lines");
             System.out.println("2. Check equality of two lines");
+            System.out.println("3. Compare two lines");
             System.out.println("Enter 0 to exit");
             int input = sc.nextInt();
             switch (input){
@@ -32,6 +32,9 @@ public class Main {
                     break;
                 case 2:
                     lineEquality.checkEquality(x1, y1, x2, y2, x3, y3, x4, y4);
+                    break;
+                case 3:
+                    lineComparison.compareLines(x1, y1, x2, y2, x3, y3, x4, y4);
                     break;
                 default:
                     System.out.println("Wrong input");
